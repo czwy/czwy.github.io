@@ -28,8 +28,8 @@ url: "https://czwy.github.io/"
 github:
   username: czwy # change to your GitHub username
 
-twitter:
-  username: czwy # change to your Twitter username
+# twitter:
+#   username: czwy # change to your Twitter username
 
 social:
   # Change to your full name.
