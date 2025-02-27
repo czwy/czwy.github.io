@@ -2,7 +2,7 @@
 categories:
 - dotnet
 date: 2024-12-30 10:19
-last_modified_at: 2025-02-27 12:20:56 +0800
+last_modified_at: 2025-02-27 13:37:03 +0800
 modified: 2024-12-30 10:20
 tags:
 - 树莓派
@@ -17,7 +17,6 @@ title: Raspberry pi 上部署调试.Net的IoT程序
 ### 发布程序
 完成程序编码后，在项目名称右键菜单中选择“发布”，然后在发布配置窗中选择目标为文件夹，然后下一步特定目标依旧选择文件夹。
 ![[PublishConfigure.png]]
-![image](PublishConfigure.png)
 完成后进行配置文件设置。配置选择`Debug|Any CPU` ；目标框架根据实际情况选择，这里选择了 `net8.0` ；部署模式可以选择依赖框架或者独立，由于远程调试时需要在树莓派上安装 .NET 运行时，所以这里选择依赖框架，可以减少程序大小；前边提到树莓派是 ARM 架构的，最新的操作系统也是64位的，所以目标运行时选择 `linux-arm64` 。
 ![[ConfigurationFileSetting.png]]
 配置完成后，点击“发布”按钮，程序会发布到配置的目标位置。
