@@ -2,7 +2,7 @@
 categories:
 - dotnet
 date: 2024-12-30 10:19
-last_modified_at: 2025-02-27 13:37:03 +0800
+last_modified_at: 2025-02-28 09:33:28 +0800
 modified: 2024-12-30 10:20
 tags:
 - 树莓派
@@ -16,9 +16,9 @@ title: Raspberry pi 上部署调试.Net的IoT程序
 通常情况，在本机开发调试是最佳选择，但是树莓派的低能耗也制约了其性能，例如本文接下来描述操作的都是在 Raspberry Pi Zero 2 W 上进行的，其配备的Broadcom BCM2710A1 是一款四核 64 位 SoC（Arm Cortex-A53 @ 1GHz）的CPU，内存为512MB，在上边安装IDE编码和调试不太现实，因此需要在开发计算机上开发应用，然后将应用部署到树莓派上进行远程调试。
 ### 发布程序
 完成程序编码后，在项目名称右键菜单中选择“发布”，然后在发布配置窗中选择目标为文件夹，然后下一步特定目标依旧选择文件夹。
-![[PublishConfigure.png]]
+![PublishConfigure](https://eb19df4.webp.li/2025/02/ConfigurationFileSetting.png)
 完成后进行配置文件设置。配置选择`Debug|Any CPU` ；目标框架根据实际情况选择，这里选择了 `net8.0` ；部署模式可以选择依赖框架或者独立，由于远程调试时需要在树莓派上安装 .NET 运行时，所以这里选择依赖框架，可以减少程序大小；前边提到树莓派是 ARM 架构的，最新的操作系统也是64位的，所以目标运行时选择 `linux-arm64` 。
-![[ConfigurationFileSetting.png]]
+![ConfigurationFileSetting](https://eb19df4.webp.li/2025/02/MFRC522SampleRunning.png)
 配置完成后，点击“发布”按钮，程序会发布到配置的目标位置。
 ### 部署到树莓派
 #### 树莓派上安装配置.NET
@@ -61,25 +61,25 @@ cd Downloads/MFRC522/linux-arm64
 chmod 755 mfrcc522Sample
 ./mfrcc522Sample
 ```
-![[MFRC522SampleRunning.png]]
+![MFRC522SampleRunning](https://eb19df4.webp.li/2025/02/attach-to-running-processes.png)
 ### 远程调试
 程序在树莓派上运行后，在开发电脑上打开visual Studio，选择“调试”>“附加到进程…”，或者用快捷键`ctrl+alt+p` 打开"附加到进程"窗口，连接类型选择"SSH"，连接目标输入树莓派的ip，其格式为`<username>@<IP>`，点击查找按钮连接上树莓派后，进程列表会显示所有进程，选中目标进程。右下角代码类型下拉框选择”托管（.NET Core for unix）代码“，点击“附加”就可以开始远程调试了。
-![[Pasted image 20241230155910.png]]
+![attach-to-running-processes](https://eb19df4.webp.li/2025/02/Remote-Debug.png)
 接下来就可以远程调试用户代码了
-![[Pasted image 20241230160241.png]]
+![Remote-Debug](https://eb19df4.webp.li/2025/02/Deselect-Enable-Just-MyCode.png)
 
 #### 调试IoT库源码
 在调试过程中出现了IoT库报的错误，通过"F12"可以查看到源码， 想进一步调试IoT的代码，则需要启用源码调试。步骤如下：
 1. 在“**工具**”（或“**调试**”）>“**选项**”>“**调试**”>“**常规**”下，确保：
     - 取消选择“**启用仅我的代码**”。
     - 选择“**启用源链接支持**”。
-![[Pasted image 20241230161420.png]]
-2. 在“**工具**”（或“**调试**”）>“**选项**”>“**调试**”>“**符号**”下，选择“**Microsoft 符号服务器**”。
-![[Pasted image 20241230161518.png]]
+![Deselect-Enable-Just-MyCode](https://eb19df4.webp.li/2025/02/Select-Microsoft-Symbol-Servers.png)
+1. 在“**工具**”（或“**调试**”）>“**选项**”>“**调试**”>“**符号**”下，选择“**Microsoft 符号服务器**”。
+![Select-Microsoft-Symbol-Servers](https://eb19df4.webp.li/2025/02/failed-Hit-breakpoint.png)
 调试过程中可能遇到断点处显式红心圆和警告提示：“当前不会命中断点。还没有为该文档加载任何符号。”
-![[Pasted image 20241230172148.png]]
+![failed-Hit-breakpoint](https://eb19df4.webp.li/2025/02/Load-Symbols.png)
 这时需要在导航栏选择“**调试**>**Windows**>**模块**”，检查模块是否已加载，如果显示没有加载符号，右键单击尚未加载符号的模块，点击”加载符号“，这时断点处会显示红色实心圆。
-![[Pasted image 20241230172824.png]]
+![Load-Symbols.png](https://eb19df4.webp.li/2025/02/Load-Symbols.png)
 ## 参考
 1. [在 Linux 上不使用包管理器的情况下安装 .NET - .NET &#124; Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-scripted-manual#scripted-install)
 2. [调试 .NET Framework 源代码 - Visual Studio (Windows) &#124; Microsoft Learn](https://learn.microsoft.com/zh-cn/visualstudio/debugger/how-to-debug-dotnet-framework-source?view=vs-2022)
