@@ -1,12 +1,12 @@
 ---
-Tags:
-- 译文
-- WPF
 categories:
 - 译文
 date: '2023-10-12 22:21:25'
 last_modified_at: 2024-07-31 11:19:53 +0800
 mtime: 2024-07-31 11:19:53
+tags:
+- 译文
+- WPF
 ---
 
 当我们创建新的类和成员时，我们花费了大量的时间和精力是它们尽可能的好用，好理解，好发现。通常我们会遵循[.Net框架设计指南](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/)，尤其是会不断地研究这个新类与其他类，未来计划等内容之间的关系。
