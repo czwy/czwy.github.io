@@ -1,16 +1,17 @@
 ---
 categories:
 - 树莓派
-date: '2024-12-30 10:19:37'
-last_modified_at: 2025-02-28 09:33:28 +0800
-mtime: 2025-02-28 09:33:28
+ctime: 2024-12-30 10:19:37
+date: 2024-12-30 10:19:37 +0800
+last_modified_at: 2025-03-03 11:04:57 +0800
+mtime: 2025-03-03 11:04:57
 tags:
 - 树莓派
 - dotnet
 - IoT
 ---
 
-树莓派（Raspberry pi）是一款基于ARM 架构的单板计算机（Single Board Computer），可以运行各种 Linux 操作系统，其官方推荐使用的 Raspberry Pi OS 也是基于Debian开发的。因其低能耗、便携小巧、GPIO等特性，可用于IoT应用开发。.NET可在各种平台和体系结构上运行，并提供了 IoT 库支持与传感器、模数转换器、舵机、FRID这些专用硬件设备交互，使 .NET在树莓派运行 IoT 应用成为可能。
+树莓派（Raspberry pi）是一款基于ARM 架构的单板计算机（Single Board Computer），可以运行各种 Linux 操作系统，其官方推荐使用的 Raspberry Pi OS 也是基于Debian开发的。因其低能耗、便携小巧、GPIO等特性，可用于IoT应用开发。.NET可在各种平台和体系结构上运行，并提供了 IoT 库支持与传感器、模数转换器、舵机、RFID这些专用硬件设备交互，使 .NET在树莓派运行 IoT 应用成为可能。
 ## 部署.NET的IoT程序
 通常情况，在本机开发调试是最佳选择，但是树莓派的低能耗也制约了其性能，例如本文接下来描述操作的都是在 Raspberry Pi Zero 2 W 上进行的，其配备的Broadcom BCM2710A1 是一款四核 64 位 SoC（Arm Cortex-A53 @ 1GHz）的CPU，内存为512MB，在上边安装IDE编码和调试不太现实，因此需要在开发计算机上开发应用，然后将应用部署到树莓派上进行远程调试。
 ### 发布程序
