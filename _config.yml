@@ -120,9 +120,9 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: czwy/czwy.github.io # <gh-username>/<repo>
-    repo_id: R_kgDON_5zHw
+    repo_id: R_kgDOOGAGpQ
     category: Announcements
-    category_id: DIC_kwDON_5zH84Cnf7c
+    category_id: DIC_kwDOOGAGpc4Cnxk5
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
