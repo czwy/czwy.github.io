@@ -2,7 +2,7 @@
 categories:
 - 译文
 date: 2023-10-12 22:21
-last_modified_at: 2024-07-31 11:19:53 +0800
+last_modified_at: 2025-03-12 22:33:09 +0800
 mtime: 2024-07-31 11:19:53
 tags:
 - 译文
@@ -15,7 +15,7 @@ title: 【译】为什么命名“它”为依赖属性(DependencyProperty)
 当命名依赖属性(DependencyProperty)和依赖对象(DependencyObject)的时候也是遵循这个原则，仅仅讨论如何命名，我们就大概花了几个小时。依赖属性(DPs)最终归结为属性计算和依赖的跟踪。属性计算并不是很特别，很多属性都是这样的，所以DP的本质特征就是依赖的跟踪，因此命名为依赖属性。
 
 这里有一个例子，实际上是一段示例代码，显示了几个依赖跟踪的例子:
-```
+``` xml
 <StackPanel DataContext="Hello, world" TextBlock.FontSize="22">
     <StackPanel.Resources>
         <Style TargetType="TextBlock">
@@ -39,7 +39,7 @@ title: 【译】为什么命名“它”为依赖属性(DependencyProperty)
 有时，如果编写自己的依赖属性，则需要在跟踪依赖项上做一些辅助。当需要重新计算属性时，可以通过调用`InvalidateProperty`来实现，通常是因为在`CoerceValueCallback`中引用了它。
 
 例如，这里有一个名为`Foo`的依赖属性和一个名为`FooPlus1`的只读依赖属性。`FooPlus1`只是有一个计算“Foo+1”的`CoerceValueCallback`。因此，`Foo`有一个`PropertyChangedCallback`，当`Foo`发生变化时，它会使`FooPlus1`失效。
-```
+``` c#
 public int Foo
 {
     get { return (int)GetValue(FooProperty); }
