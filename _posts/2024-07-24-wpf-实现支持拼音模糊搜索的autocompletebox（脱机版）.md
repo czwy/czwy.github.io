@@ -2,7 +2,7 @@
 categories:
 - WPF
 date: 2024-07-24 14:22
-last_modified_at: 2025-03-23 12:50:30 +0800
+last_modified_at: 2025-03-23 13:28:25 +0800
 mtime: 2025-03-23 12:29:29
 tags:
 - WPF
@@ -94,7 +94,7 @@ public static bool fuzzyMatchChar(string character, string input, out int matchS
 这里的`PhoneticizeMatch`方法是拼音匹配算法的核心，是在[【算法】拼音匹配算法](https://www.cnblogs.com/bomo/archive/2012/12/02/2798229.html)这篇博文中算法的基础上稍作修改，详细的思路及图解可阅读这篇博文。
 
 ## 高亮匹配的子串
-WPF中可以通过`TextEffect`的`PositionStart`、`PositionCount`以及`Foreground`属性设置字符串中需要高亮内容的起始位置、长度以及高亮颜色。前面拼音匹配算法中获取了匹配成功子串的起始位置和长度，也正是为此做准备。之前在[WPF使用TextBlock实现查找结果高亮显示](https://www.cnblogs.com/czwy/p/17661379.html)一文中有详细介绍思路和代码，此处不再赘述。
+WPF中可以通过`TextEffect`的`PositionStart`、`PositionCount`以及`Foreground`属性设置字符串中需要高亮内容的起始位置、长度以及高亮颜色。前面拼音匹配算法中获取了匹配成功子串的起始位置和长度，也正是为此做准备。之前在<a href="/posts/wpf使用textblock实现查找结果高亮显示/">WPF使用TextBlock实现查找结果高亮显示</a>一文中有详细介绍思路和代码，此处不再赘述。
 
 ## 小结
 本文介绍了在不依赖数据库及分词的情况下如何实现拼音模糊搜索并在目标字符串中高亮显示，方法中也存在诸多不足需要完善的地方。
