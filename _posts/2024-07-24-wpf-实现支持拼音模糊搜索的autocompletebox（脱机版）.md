@@ -2,7 +2,7 @@
 categories:
 - WPF
 date: 2024-07-24 14:22
-last_modified_at: 2025-03-23 13:28:25 +0800
+last_modified_at: 2025-03-23 18:33:09 +0800
 mtime: 2025-03-23 12:29:29
 tags:
 - WPF
@@ -18,7 +18,7 @@ WPF中并没有AutoCompleteBox控件，我们可以使用`TextBox`输入搜索�
 3. **匹配后的内容高亮显示。** 当输入`dhua`匹配到`刘德华`时需要把`德华`两个字高亮。
 
 ## 汉字转换拼音
-微软为了开发者实现国际化语言的互转，提供了Microsoft Visual Studio International Pack，这个扩展包里面有中文、日文、韩文、英语等各国语言包，并提供方法实现互转、获取拼音、获取字数、甚至获取笔画数等等。下载[Microsoft Visual Studio International Pack 1.0 SR1](http://www.microsoft.com/zh-cn/download/details.aspx?id=15251)安装后，在安装目录中找到`ChnCharInfo.dll`，然后在项目中添加引用。
+微软为了开发者实现国际化语言的互转，提供了Microsoft Visual Studio International Pack，这个扩展包里面有中文、日文、韩文、英语等各国语言包，并提供方法实现互转、获取拼音、获取字数、甚至获取笔画数等等。下载 Microsoft Visual Studio International Pack 1.0 SR1 安装后，在安装目录中找到`ChnCharInfo.dll`，然后在项目中添加引用。
 `ChnCharInfo.dll`获取汉字的拼音时只能传入单个字符，因此只能把汉字字符串拆分成一个个字符处理，由于汉字存在多音字情况以及缺少语义信息，获取的拼音组合可能是多个，例如输入`长江`，返回的是`changjiang`和`zhangjiang`。汉字转拼音的方法如下：
 ``` c#
 /// <summary>
