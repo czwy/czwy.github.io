@@ -2,7 +2,7 @@
 categories:
 - IoT
 date: 2025-02-19 14:49
-last_modified_at: 2025-02-20 15:33:29 +0800
+last_modified_at: 2025-03-23 18:20:38 +0800
 mtime: 2025-02-20 15:33:29
 tags:
 - IoT
@@ -407,4 +407,4 @@ else
     }
 }
 ```
-最后，就是把程序部署到 Raspberry pi 上，具体操作可以参照<a href="/posts/raspberry-pi-上部署调试-net的iot程序/">Raspberry pi 上部署调试.Net的IoT程序</a>。
+最后，就是把程序部署到 Raspberry pi 上，具体操作可以参照<a href="/posts/raspberry-pi-上部署调试dotnet的iot程序/">Raspberry pi 上部署调试dotnet的IoT程序</a>。
