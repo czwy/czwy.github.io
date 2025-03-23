@@ -15,7 +15,7 @@ title: XAML格式化工具-XAML Styler
 格式化XAML代码可以使代码布局整齐，减少冗余空格和换行符，使代码结构清晰、缩进一致。使代码更易于阅读和理解，开发人员能够更快速地编写和修改代码。此外，还可以确保整个项目中的代码风格一致，对于团队协作和代码维护非常重要。然而微软官方并未提供很好的XAML格式化方案，不过Visual Studio Marketplace中有个非常好用的插件[XAML Styler](https://github.com/Xavalon/XamlStyler)。
 
 ## 安装配置XAML Styler
-在Visual Studio的扩展管理窗口中，搜索XAML Styler下载安装后重启Visual Studio即可完成安装。在"工具"->"选项"中找到"XAML Styler"可以进行详细配置。每一项具体含义参见<a href="/posts/xaml格式化工具-xaml-styler/#DescriptionofConfig">配置说明</a>
+在Visual Studio的扩展管理窗口中，搜索XAML Styler下载安装后重启Visual Studio即可完成安装。在"工具"->"选项"中找到"XAML Styler"可以进行详细配置。每一项具体含义参见配置说明
 ![XAMLStyler](https://eb19df4.webp.li/2025/02/XAMLStyler.png)
 如果需要在XAML编辑器执行保存时自动格式化，需要把`Format XAML on save`设置为true。如果想手动格式化，则直接在XAML编辑器中右键菜单点击`Format XAML`或者使用快捷键进行格式化。
 ![FormatXAML](https://eb19df4.webp.li/2025/02/FormatXAML.png){: .normal }### 统一格式化标准
