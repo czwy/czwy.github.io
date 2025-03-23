@@ -2,8 +2,8 @@
 categories:
 - WPF
 date: 2023-10-24 13:48
-last_modified_at: 2025-02-28 12:22:19 +0800
-mtime: 2025-02-28 12:22:19
+last_modified_at: 2025-03-23 12:54:31 +0800
+mtime: 2025-03-23 12:54:31
 tags:
 - WPF
 - XAML
@@ -25,7 +25,7 @@ title: WPF原生TabControl控件实现拖拽排序功能
 实现效果如下：
 ![ItemsDragDrop](https://eb19df4.webp.li/2025/02/ItemsDragDrop.gif)
 
-### 主要思路
+## 主要思路
 WPF中核心基类UIElement包含了`DragEnter`，`DragLeave`，`DragEnter`，`Drop`等拖拽相关的事件，因此只需对这几个事件进行监听并做相应的处理就可以实现WPF中的UI元素拖拽操作。
 
 另外，WPF的一大特点是支持数据驱动，即由数据模型来推动UI的呈现。因此，可以通过通过拖拽事件处理拖拽的源位置以及目标位置，并获取到对应位置渲染的数据，然后操作数据集中数据的位置，从而实现数据和UI界面上的顺序更新。
@@ -197,7 +197,7 @@ void selector_Drop(object sender, DragEventArgs e)
 }
 ```
 
-### 优点与缺点
+## 优点与缺点
 优点：
 * 用法简单，封装好拖拽操作的附加属性后，只需一行代码实现拖拽功能。
 * 对现有项目友好，对于已有项目需要扩展拖拽操作排序功能，无需替换控件。
@@ -208,11 +208,11 @@ void selector_Drop(object sender, DragEventArgs e)
 * 仅支持列表控件内的元素拖拽，不支持穿梭框拖拽效果。
 * 不支持同时拖拽多个元素。
 
-### 小结
+## 小结
 本文介绍列表拖拽操作的解决方案不算完美，功能简单但轻量，并且很好的体现了WPF的数据驱动的思想。个人非常喜欢这种方式，它能让我们轻松的实现列表数据的增删以及排序操作，而不是耗费时间和精力去自定义可增删数据的控件。
 
-### 参考
+## 参考
 1. https://www.codeproject.com/Articles/17266/Drag-and-Drop-Items-in-a-WPF-ListView#xx1911611xx
 
-### 代码示例
+## 代码示例
 [SelectorDragDropSamples](https://files.cnblogs.com/files/blogs/777868/DragDropAssist.7z?t=1698117655&download=true)
