@@ -2,11 +2,11 @@
 categories:
 - XAML
 date: 2023-08-08 22:11
-last_modified_at: 2025-03-23 18:33:45 +0800
-mtime: 2025-03-23 18:33:45
+last_modified_at: 2025-03-23 18:36:40 +0800
+mtime: 2025-03-23 18:36:40
 tags:
 - XAML
-title: XAML格式化工具——XAML Styler
+title: XAML格式化工具-XAML Styler
 ---
 
 ## XAML格式化的意义
