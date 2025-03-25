@@ -115,14 +115,10 @@ return re.sub(r'---\n.*?\n---\n','',md_content,flags=re.DOTALL)
 部分嵌入文本块时，通过 `MarkdownIt` 的 `SyntaxTreeNode` 解析笔记，然后查找类型为 `paragraph` 且以 `^yyy` 结尾的节点，读取该节点内容。
 ``` python
 filtered = list(map(lambda r:r,filter(lambda node: node.type == "paragraph" and ''.join([child.content for child in node.children if child.type == 'text' or child.type == 'inline']).endswith(target), root.children)))
-
-                if len(filtered) == 1:
-
-                    return '\n'+'\n'.join([child.content for child in filtered[0].children if child.type == 'text' or child.type == 'inline']).strip(target) + '\n'
-
-                else:
-
-                    return ''
+if len(filtered) == 1:
+    return '\n'+'\n'.join([child.content for child in filtered[0].children if child.type == 'text' or child.type == 'inline']).strip(target) + '\n'
+else:
+    return ''
 ```
 部分嵌入标题及该级标题下所有内容时，通过 `MarkdownIt` 的 `SyntaxTreeNode` 解析笔记，然后遍历节点，找到匹配的标题时记录标题层级以及标题的行号作为起始行，然后继续遍历节点，直到找到下一个同级标题，并记录行号，将上一行作为结束行，然后读取起始行和结束行之间的内容。
 ``` python
